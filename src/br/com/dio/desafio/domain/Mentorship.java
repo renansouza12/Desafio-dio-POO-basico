@@ -2,26 +2,8 @@ package br.com.dio.desafio.domain;
 
 import java.time.LocalDate;
 
-public class Mentorship {
-    private String title;
-    private String description;
+public class Mentorship extends Conteudo{
     private LocalDate date;
-
-    public String getTitle() {
-        return title;
-    }
-
-    public void setTitle(String title) {
-        this.title = title;
-    }
-
-    public String getDescription() {
-        return description;
-    }
-
-    public void setDescription(String description) {
-        this.description = description;
-    }
 
     public LocalDate getDate() {
         return date;
@@ -32,11 +14,18 @@ public class Mentorship {
     }
 
     @Override
+    public double calculeXp() {
+        return XP_DEFALUT * 20;
+    }
+
+    @Override
     public String toString() {
       return "Mentorship{" +
-          "title='" + title + '\'' +
-          ", description='" + description + '\'' +
+          "title='" + getTitle() + '\'' +
+          ", description='" + getDescription() + '\'' +
           ", date=" + date +
           '}';
     }
+
+
 }
